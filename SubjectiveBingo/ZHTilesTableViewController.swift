@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GameKit
 
 class ZHTilesTableViewController: UITableViewController {
 
@@ -39,8 +40,14 @@ class ZHTilesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let gameKitHelper = ZHGameKitHelper()
-        gameKitHelper.authenticatePlayer()
+        
+        
+        NSNotificationCenter.defaultCenter().addObserverForName(ZHGameKitHelperLocalPlayerAuthenticated, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) -> Void in
+            ZHGameKitHelper.sharedInstance.findMatch(2, maxPlayers: 2, viewController: self, delegate: self)
+        }
+        
+        
+        ZHGameKitHelper.sharedInstance.authenticatePlayer()
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -53,4 +60,17 @@ class ZHTilesTableViewController: UITableViewController {
         cell?.detailTextLabel!.text = tiles[indexPath.row]
         return cell!
     }
+}
+
+extension ZHTilesTableViewController: ZHGameKitHelperDelegate {
+    func matchStarted() {
+        print("match started")
+    }
+    func matchEnded() {
+        print("match ended")
+    }
+    func match(match: GKMatch, data: NSData, playerID: String) {
+        print("match received data")
+    }
+
 }

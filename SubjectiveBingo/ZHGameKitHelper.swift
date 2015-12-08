@@ -25,6 +25,7 @@ protocol ZHGameKitHelperDelegate {
 
 class ZHGameKitHelper: NSObject {
 
+    static let sharedInstance = ZHGameKitHelper()
     
     var lastError: NSError? = nil {
         didSet{
@@ -44,6 +45,7 @@ class ZHGameKitHelper: NSObject {
     var matchStarted: Bool = false
     var match: GKMatch? = nil
     var delegate: ZHGameKitHelperDelegate? = nil
+    var playersDict = Dictionary<String, GKPlayer>()
     
     func authenticatePlayer() {
         let localPlayer = GKLocalPlayer.localPlayer()
@@ -88,19 +90,47 @@ class ZHGameKitHelper: NSObject {
         mmvc?.matchmakerDelegate = self
         viewController.presentViewController(mmvc!, animated: true, completion: nil)
     }
+
+
+    func lookupPlayers() {
+        print("Looking up \(match?.players.count) players...")
+        GKPlayer.loadPlayersForIdentifiers((match?.playerIDs)!) { (players: [GKPlayer]?, error: NSError?) -> Void in
+            if let error = error {
+                print("Error retreiving plyer info: " + error.localizedDescription)
+                self.matchStarted = false
+                self.delegate?.matchEnded()
+            } else {
+                self.playersDict.removeAll()
+                for player in players! {
+                    print("Found player: " + player.playerID!)
+                    self.playersDict[player.playerID!] = player
+                }
+                
+                self.playersDict[GKLocalPlayer.localPlayer().playerID!] = GKLocalPlayer.localPlayer()
+            }
+        }
+    }
+    
 }
 
 extension ZHGameKitHelper: GKMatchmakerViewControllerDelegate {
     func matchmakerViewControllerWasCancelled(viewController: GKMatchmakerViewController) {
-        
+        viewController.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func matchmakerViewController(viewController: GKMatchmakerViewController, didFailWithError error: NSError) {
-        
+        viewController.dismissViewControllerAnimated(true, completion: nil)
+        print("Error finding match: " + error.localizedDescription)
     }
     
     func matchmakerViewController(viewController: GKMatchmakerViewController, didFindMatch match: GKMatch) {
-        
+        viewController.dismissViewControllerAnimated(true, completion: nil)
+        self.match = match;
+        match.delegate = self;
+        if !matchStarted && match.expectedPlayerCount == 0 {
+            print("Ready to start match!")
+            lookupPlayers()
+        }
     }
     
 }
