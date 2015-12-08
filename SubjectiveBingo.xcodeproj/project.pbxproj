@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		C6480EE31C16B902007F7DE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6480EE21C16B902007F7DE5 /* AppDelegate.swift */; };
-		C6480EE51C16B902007F7DE5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6480EE41C16B902007F7DE5 /* ViewController.swift */; };
 		C6480EE81C16B902007F7DE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6480EE61C16B902007F7DE5 /* Main.storyboard */; };
 		C6480EEA1C16B902007F7DE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6480EE91C16B902007F7DE5 /* Assets.xcassets */; };
 		C6480EED1C16B902007F7DE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6480EEB1C16B902007F7DE5 /* LaunchScreen.storyboard */; };
 		C6480EF81C16B902007F7DE5 /* SubjectiveBingoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6480EF71C16B902007F7DE5 /* SubjectiveBingoTests.swift */; };
 		C6480F031C16B902007F7DE5 /* SubjectiveBingoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6480F021C16B902007F7DE5 /* SubjectiveBingoUITests.swift */; };
+		C6480F111C16B922007F7DE5 /* ZHGameKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6480F101C16B922007F7DE5 /* ZHGameKitHelper.swift */; };
+		C6480F131C16B949007F7DE5 /* ZHTilesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6480F121C16B949007F7DE5 /* ZHTilesTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +37,6 @@
 /* Begin PBXFileReference section */
 		C6480EDF1C16B902007F7DE5 /* SubjectiveBingo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SubjectiveBingo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6480EE21C16B902007F7DE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C6480EE41C16B902007F7DE5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C6480EE71C16B902007F7DE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C6480EE91C16B902007F7DE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C6480EEC1C16B902007F7DE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +47,8 @@
 		C6480EFE1C16B902007F7DE5 /* SubjectiveBingoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SubjectiveBingoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6480F021C16B902007F7DE5 /* SubjectiveBingoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectiveBingoUITests.swift; sourceTree = "<group>"; };
 		C6480F041C16B902007F7DE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C6480F101C16B922007F7DE5 /* ZHGameKitHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHGameKitHelper.swift; sourceTree = "<group>"; };
+		C6480F121C16B949007F7DE5 /* ZHTilesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHTilesTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +100,12 @@
 			isa = PBXGroup;
 			children = (
 				C6480EE21C16B902007F7DE5 /* AppDelegate.swift */,
-				C6480EE41C16B902007F7DE5 /* ViewController.swift */,
 				C6480EE61C16B902007F7DE5 /* Main.storyboard */,
 				C6480EE91C16B902007F7DE5 /* Assets.xcassets */,
 				C6480EEB1C16B902007F7DE5 /* LaunchScreen.storyboard */,
 				C6480EEE1C16B902007F7DE5 /* Info.plist */,
+				C6480F101C16B922007F7DE5 /* ZHGameKitHelper.swift */,
+				C6480F121C16B949007F7DE5 /* ZHTilesTableViewController.swift */,
 			);
 			path = SubjectiveBingo;
 			sourceTree = "<group>";
@@ -256,7 +259,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6480EE51C16B902007F7DE5 /* ViewController.swift in Sources */,
+				C6480F111C16B922007F7DE5 /* ZHGameKitHelper.swift in Sources */,
+				C6480F131C16B949007F7DE5 /* ZHTilesTableViewController.swift in Sources */,
 				C6480EE31C16B902007F7DE5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

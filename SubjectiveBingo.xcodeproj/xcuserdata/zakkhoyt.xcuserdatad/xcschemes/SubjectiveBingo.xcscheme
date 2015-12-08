@@ -5,6 +5,22 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C6480EDE1C16B902007F7DE5"
+               BuildableName = "SubjectiveBingo.app"
+               BlueprintName = "SubjectiveBingo"
+               ReferencedContainer = "container:SubjectiveBingo.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -12,7 +28,36 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C6480EF21C16B902007F7DE5"
+               BuildableName = "SubjectiveBingoTests.xctest"
+               BlueprintName = "SubjectiveBingoTests"
+               ReferencedContainer = "container:SubjectiveBingo.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C6480EFD1C16B902007F7DE5"
+               BuildableName = "SubjectiveBingoUITests.xctest"
+               BlueprintName = "SubjectiveBingoUITests"
+               ReferencedContainer = "container:SubjectiveBingo.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "C6480EDE1C16B902007F7DE5"
+            BuildableName = "SubjectiveBingo.app"
+            BlueprintName = "SubjectiveBingo"
+            ReferencedContainer = "container:SubjectiveBingo.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -26,6 +71,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "C6480EDE1C16B902007F7DE5"
+            BuildableName = "SubjectiveBingo.app"
+            BlueprintName = "SubjectiveBingo"
+            ReferencedContainer = "container:SubjectiveBingo.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -35,6 +90,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "C6480EDE1C16B902007F7DE5"
+            BuildableName = "SubjectiveBingo.app"
+            BlueprintName = "SubjectiveBingo"
+            ReferencedContainer = "container:SubjectiveBingo.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
